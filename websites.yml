@@ -1,0 +1,34 @@
+version: "3.3"
+
+services:
+  watchtower:
+    image: containrrr/watchtower
+    container_name: websites_watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/localtime:/etc/localtime:ro
+    command: cleanfolio --interval 3600 --cleanup --include-restarting
+    depends_on:
+      - cleanfolio
+    networks:
+     - websites
+
+  cleanfolio:
+    image: martinklapacz/cleanfolio
+    container_name: websites_cleanfolio
+    ports:
+        - 3000:3000
+    volumes:
+      - cleanfolio:/cleanfolio/node_modules
+    stdin_open: true
+    tty: true
+    networks:
+     - websites
+
+volumes:
+  cleanfolio:
+    driver: local
+
+networks:
+  websites:
+    driver: bridge
