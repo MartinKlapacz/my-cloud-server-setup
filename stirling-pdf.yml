@@ -1,0 +1,23 @@
+version: '3.3'
+
+services:
+  stirling-pdf:
+    image: frooodle/s-pdf:latest
+    ports:
+      - '${STIRLING_PDF_PORT}:8080'
+    volumes:
+      - stirling-pdf-tessdata:/usr/share/tesseract-ocr/5/tessdata
+      - stirling-pdf-configs:/configs
+    environment:
+      - DOCKER_ENABLE_SECURITY=false
+
+
+volumes:
+  stirling-pdf-tessdata:
+    driver: local
+  stirling-pdf-configs:
+    driver: local
+
+networks:
+  portainer:
+    driver: bridge
