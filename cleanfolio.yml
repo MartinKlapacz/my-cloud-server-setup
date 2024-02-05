@@ -5,7 +5,7 @@ services:
     image: martinklapacz/cleanfolio
     container_name: websites_cleanfolio
     ports:
-        - 3000:3000
+        - ${CLEANFOLIO_PORT}:3000
     volumes:
       - cleanfolio:/cleanfolio/node_modules
     stdin_open: true
