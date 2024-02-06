@@ -16,6 +16,8 @@ owncloud-up:
 stirling-pdf-up:
 	docker compose -f stirling-pdf.yml up -d
 
+jira-up:
+	docker compose -f jira.yml up -d
 
 cleanfolio-down:
 	docker compose -f cleanfolio.yml down
@@ -28,3 +30,6 @@ owncloud-down:
 
 stirling-pdf-down:
 	docker compose -f stirling-pdf.yml down
+
+jira-down:
+	docker compose -f jira.yml down
