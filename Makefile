@@ -16,6 +16,9 @@ owncloud-up:
 stirling-pdf-up:
 	docker compose -f stirling-pdf.yml up -d
 
+kanboard-up:
+	docker compose -f kanboard.yml up -d
+
 
 cleanfolio-down:
 	docker compose -f cleanfolio.yml down
@@ -28,3 +31,6 @@ owncloud-down:
 
 stirling-pdf-down:
 	docker compose -f stirling-pdf.yml down
+
+kanboard-down:
+	docker compose -f kanboard.yml down
