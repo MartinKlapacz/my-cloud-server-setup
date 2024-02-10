@@ -34,3 +34,8 @@ stirling-pdf-down:
 
 kanboard-down:
 	docker compose -f kanboard.yml down
+
+
+all-up: cleanfolio-up portainer-up owncloud-up stirling-pdf-up kanboard-up
+
+all-down: cleanfolio-down portainer-down owncloud-down stirling-pdf-down kanboard-down
