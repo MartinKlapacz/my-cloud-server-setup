@@ -3,6 +3,7 @@ version: "3.3"
 services:
   kanboard:
     image: kanboard/kanboard:latest
+    container_name: kanboard
     ports:
       - "${KANBOARD_PORT}:80"
     volumes:

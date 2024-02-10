@@ -3,7 +3,7 @@ version: "3.3"
 services:
   cleanfolio:
     image: martinklapacz/cleanfolio
-    container_name: websites_cleanfolio
+    container_name: cleanfolio
     ports:
         - ${CLEANFOLIO_PORT}:3000
     volumes:

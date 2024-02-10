@@ -3,7 +3,7 @@ version: '3.3'
 services:
   stirling-pdf:
     image: frooodle/s-pdf:latest
-    container_name: stirling_pdf_server
+    container_name: stirling-pdf
     ports:
       - '${STIRLING_PDF_PORT}:8080'
     volumes:
