@@ -19,6 +19,9 @@ stirling-pdf-up:
 kanboard-up:
 	docker compose -f kanboard.yml up -d
 
+chord-up:
+	docker compose -f chord.yml up -d
+
 
 cleanfolio-down:
 	docker compose -f cleanfolio.yml down
@@ -35,7 +38,10 @@ stirling-pdf-down:
 kanboard-down:
 	docker compose -f kanboard.yml down
 
+chord-down:
+	docker compose -f chord.yml down
 
-all-up: cleanfolio-up portainer-up owncloud-up stirling-pdf-up kanboard-up
 
-all-down: cleanfolio-down portainer-down owncloud-down stirling-pdf-down kanboard-down
+all-up: cleanfolio-up portainer-up owncloud-up stirling-pdf-up kanboard-up chord-up
+
+all-down: cleanfolio-down portainer-down owncloud-down stirling-pdf-down kanboard-down chord-down

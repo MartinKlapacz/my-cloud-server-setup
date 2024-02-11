@@ -1,0 +1,25 @@
+version: '3'
+services:
+  chord_node_1:
+    image: martinklapacz/chord:latest
+    container_name: chord_node_1
+    command: ["./target/release/chord", "--config=configs/config1.ini"]
+    network_mode: host
+
+  chord_node_2:
+    image: martinklapacz/chord:latest
+    container_name: chord_node_2
+    command: ["./target/release/chord", "--config=configs/config2.ini"]
+    network_mode: host
+    depends_on:
+      - chord_node_1
+
+  chord_node_3:
+    image: martinklapacz/chord:latest
+    container_name: chord_node_3
+    command: ["./target/release/chord", "--config=configs/config3.ini"]
+    network_mode: host
+    depends_on:
+      - chord_node_1
+      - chord_node_2
+
