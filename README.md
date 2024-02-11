@@ -4,7 +4,8 @@ I use docker-compose files to configure my services. Currently in use are:
 - owncloud.yml: my personal file cloud
 - portainer.yml: a tool I use for managing my docker containers, images, networks and volumes in the browser
 - stirling-pdf.yml: a tool I use for pdf manipulation
-- kanban.yml: a trello-like and simple project management tool I use for personal projects 
+- kanban.yml: a trello-like and simple project management tool I use for personal projects
+- chord.yml: my [Chord implementation](https://github.com/MartinKlapacz/Chord-Network) running as a deployed cluster of three nodes
 
 I use Make to simplify starting and stopping services.
 The services require the following environment variables:
